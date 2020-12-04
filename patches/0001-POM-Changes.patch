@@ -1,4 +1,4 @@
-From e4816730bf3936fe2bea6e9a4774451a401b7021 Mon Sep 17 00:00:00 2001
+From 49d225db37edd94e51398caf0d3519459a552548 Mon Sep 17 00:00:00 2001
 From: Troy Frew <fuzzy_bot@arenaga.me>
 Date: Tue, 15 Nov 2016 08:56:43 -0500
 Subject: [PATCH] POM Changes
@@ -65,7 +65,7 @@ index 10db38b7..12494a75 100644
              <scope>compile</scope>
          </dependency>
 diff --git a/bootstrap/pom.xml b/bootstrap/pom.xml
-index 0a890393..b679dee2 100644
+index 0a890393..e48f84fb 100644
 --- a/bootstrap/pom.xml
 +++ b/bootstrap/pom.xml
 @@ -4,19 +4,19 @@
@@ -109,7 +109,7 @@ index 0a890393..b679dee2 100644
  
      <build>
 -        <finalName>Waterfall</finalName>
-+        <finalName>Avalanche</finalName>
++        <finalName>mudslide</finalName>
          <plugins>
              <plugin>
                  <groupId>org.apache.maven.plugins</groupId>
@@ -756,5 +756,5 @@ index 1c845a6d..2b3a7ab2 100644
              <scope>compile</scope>
          </dependency>
 -- 
-2.25.1
+2.13.3.windows.1
 

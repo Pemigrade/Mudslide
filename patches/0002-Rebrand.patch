@@ -1,11 +1,11 @@
-From 755d7fc06e54913c99f8f39eb02f85f47ecaf688 Mon Sep 17 00:00:00 2001
+From 0966c11a794e30d44426b62b8144217c648a3332 Mon Sep 17 00:00:00 2001
 From: William Blake Galbreath <Blake.Galbreath@GMail.com>
 Date: Wed, 10 Jun 2020 13:24:02 -0500
 Subject: [PATCH] Rebrand
 
 
 diff --git a/bootstrap/src/main/java/net/md_5/bungee/Bootstrap.java b/bootstrap/src/main/java/net/md_5/bungee/Bootstrap.java
-index a4516ed9..80e46e30 100644
+index a4516ed9..e46381f3 100644
 --- a/bootstrap/src/main/java/net/md_5/bungee/Bootstrap.java
 +++ b/bootstrap/src/main/java/net/md_5/bungee/Bootstrap.java
 @@ -7,7 +7,7 @@ public class Bootstrap
@@ -13,12 +13,12 @@ index a4516ed9..80e46e30 100644
          if ( Float.parseFloat( System.getProperty( "java.class.version" ) ) < 52.0 )
          {
 -            System.err.println( "*** ERROR *** Waterfall requires Java 8 or above to function! Please download and install it!" );
-+            System.err.println( "*** ERROR *** Avalanche requires Java 8 or above to function! Please download and install it!" ); // Avalanche
++            System.err.println( "*** ERROR *** Mudslide requires Java 8 or above to function! Please download and install it!" ); // Mudslide
              System.out.println( "You can check your Java version with the command: java -version" );
              return;
          }
 diff --git a/log/src/main/java/net/md_5/bungee/log/LogDispatcher.java b/log/src/main/java/net/md_5/bungee/log/LogDispatcher.java
-index d703d6d2..db465d52 100644
+index d703d6d2..c6107912 100644
 --- a/log/src/main/java/net/md_5/bungee/log/LogDispatcher.java
 +++ b/log/src/main/java/net/md_5/bungee/log/LogDispatcher.java
 @@ -12,7 +12,7 @@ public class LogDispatcher extends Thread
@@ -26,12 +26,12 @@ index d703d6d2..db465d52 100644
      public LogDispatcher(BungeeLogger logger)
      {
 -        super( "Waterfall Logger Thread" );
-+        super( "Avalanche Logger Thread" ); // Avalanche
++        super( "Mudslide Logger Thread" ); // Mudslide
          this.logger = logger;
      }
  
 diff --git a/pom.xml b/pom.xml
-index b004f717..bb2f27b7 100644
+index b004f717..a4838c39 100644
 --- a/pom.xml
 +++ b/pom.xml
 @@ -120,13 +120,14 @@
@@ -39,7 +39,7 @@ index b004f717..bb2f27b7 100644
                  <version>1.3</version>
                  <configuration>
 -                    <format>git:${project.name}:${project.version}:%s:${build.number}</format>
-+                    <outputPrefix>git-Avalanche-</outputPrefix>
++                    <outputPrefix>git-Mudslide-</outputPrefix>
 +                    <scmDirectory>..</scmDirectory>
                  </configuration>
                  <executions>
@@ -53,7 +53,7 @@ index b004f717..bb2f27b7 100644
                      </execution>
                  </executions>
 diff --git a/proxy/src/main/java/net/md_5/bungee/BungeeCord.java b/proxy/src/main/java/net/md_5/bungee/BungeeCord.java
-index 2938f2f1..1d9ad39f 100644
+index 2938f2f1..cd6a57e1 100644
 --- a/proxy/src/main/java/net/md_5/bungee/BungeeCord.java
 +++ b/proxy/src/main/java/net/md_5/bungee/BungeeCord.java
 @@ -188,7 +188,7 @@ public class BungeeCord extends ProxyServer
@@ -61,12 +61,12 @@ index 2938f2f1..1d9ad39f 100644
      {
          // Java uses ! to indicate a resource inside of a jar/zip/other container. Running Bungee from within a directory that has a ! will cause this to muck up.
 -        Preconditions.checkState( new File( "." ).getAbsolutePath().indexOf( '!' ) == -1, "Cannot use Waterfall in directory with ! in path." );
-+        Preconditions.checkState( new File( "." ).getAbsolutePath().indexOf( '!' ) == -1, "Cannot use Avalanche in directory with ! in path." ); // Avalanche
++        Preconditions.checkState( new File( "." ).getAbsolutePath().indexOf( '!' ) == -1, "Cannot use Mudslide in directory with ! in path." ); // Mudslide
  
          try
          {
 diff --git a/proxy/src/main/java/net/md_5/bungee/BungeeCordLauncher.java b/proxy/src/main/java/net/md_5/bungee/BungeeCordLauncher.java
-index dc2c584d..2422046c 100644
+index dc2c584d..683929cb 100644
 --- a/proxy/src/main/java/net/md_5/bungee/BungeeCordLauncher.java
 +++ b/proxy/src/main/java/net/md_5/bungee/BungeeCordLauncher.java
 @@ -40,7 +40,7 @@ public class BungeeCordLauncher
@@ -74,7 +74,7 @@ index dc2c584d..2422046c 100644
          }
  
 -        if ( BungeeCord.class.getPackage().getSpecificationVersion() != null && System.getProperty( "IReallyKnowWhatIAmDoingISwear" ) == null )
-+        if ( false && BungeeCord.class.getPackage().getSpecificationVersion() != null && System.getProperty( "IReallyKnowWhatIAmDoingISwear" ) == null ) // Avalanche
++        if ( false && BungeeCord.class.getPackage().getSpecificationVersion() != null && System.getProperty( "IReallyKnowWhatIAmDoingISwear" ) == null ) // Mudslide
          {
              Date buildDate = new SimpleDateFormat( "yyyyMMdd" ).parse( BungeeCord.class.getPackage().getSpecificationVersion() );
  
@@ -83,12 +83,12 @@ index dc2c584d..2422046c 100644
          BungeeCord bungee = new BungeeCord();
          ProxyServer.setInstance( bungee );
 -        bungee.getLogger().info( "Enabled Waterfall version " + bungee.getVersion() );
-+        bungee.getLogger().info( "Enabled Avalanche version " + bungee.getVersion() ); // Avalanche
++        bungee.getLogger().info( "Enabled Mudslide version " + bungee.getVersion() ); // Mudslide
          bungee.start();
  
          if ( !options.has( "noconsole" ) )
 diff --git a/proxy/src/main/java/net/md_5/bungee/command/CommandBungee.java b/proxy/src/main/java/net/md_5/bungee/command/CommandBungee.java
-index b26035cf..0954cc04 100644
+index b26035cf..dabee55c 100644
 --- a/proxy/src/main/java/net/md_5/bungee/command/CommandBungee.java
 +++ b/proxy/src/main/java/net/md_5/bungee/command/CommandBungee.java
 @@ -16,6 +16,6 @@ public class CommandBungee extends Command
@@ -96,11 +96,11 @@ index b26035cf..0954cc04 100644
      public void execute(CommandSender sender, String[] args)
      {
 -        sender.sendMessage( ChatColor.BLUE + "This server is running Waterfall version " + ProxyServer.getInstance().getVersion() + " by md_5" );
-+        sender.sendMessage( ChatColor.BLUE + "This server is running Avalanche version " + ProxyServer.getInstance().getVersion() + " by BillyGalbreath" ); // Avalanche
++        sender.sendMessage( ChatColor.BLUE + "This server is running Mudslide version " + ProxyServer.getInstance().getVersion() + " by BillyGalbreath" ); // Mudslide
      }
  }
 diff --git a/proxy/src/main/java/net/md_5/bungee/command/CommandReload.java b/proxy/src/main/java/net/md_5/bungee/command/CommandReload.java
-index 720d0c3b..4ae1ddbc 100644
+index 720d0c3b..14798b59 100644
 --- a/proxy/src/main/java/net/md_5/bungee/command/CommandReload.java
 +++ b/proxy/src/main/java/net/md_5/bungee/command/CommandReload.java
 @@ -23,7 +23,7 @@ public class CommandReload extends Command
@@ -109,12 +109,12 @@ index 720d0c3b..4ae1ddbc 100644
  
 -        sender.sendMessage( ChatColor.BOLD.toString() + ChatColor.RED.toString() + "Waterfall has been reloaded."
 -                + " This is NOT advisable and you will not be supported with any issues that arise! Please restart Waterfall ASAP." );
-+        sender.sendMessage( ChatColor.BOLD.toString() + ChatColor.RED.toString() + "Avalanche has been reloaded." // Avalanche
-+                + " This is NOT advisable and you will not be supported with any issues that arise! Please restart Avalanche ASAP." ); // Avalanche
++        sender.sendMessage( ChatColor.BOLD.toString() + ChatColor.RED.toString() + "Mudslide has been reloaded." // Mudslide
++                + " This is NOT advisable and you will not be supported with any issues that arise! Please restart Mudslide ASAP." ); // Mudslide
      }
  }
 diff --git a/proxy/src/main/java/net/md_5/bungee/conf/YamlConfig.java b/proxy/src/main/java/net/md_5/bungee/conf/YamlConfig.java
-index 65121ba2..81629f36 100644
+index 65121ba2..9aeed3ba 100644
 --- a/proxy/src/main/java/net/md_5/bungee/conf/YamlConfig.java
 +++ b/proxy/src/main/java/net/md_5/bungee/conf/YamlConfig.java
 @@ -227,7 +227,7 @@ public class YamlConfig implements ConfigurationAdapter
@@ -122,12 +122,12 @@ index 65121ba2..81629f36 100644
              String name = entry.getKey();
              String addr = get( "address", "localhost:25565", val );
 -            String motd = ChatColor.translateAlternateColorCodes( '&', get( "motd", "&1Just another Waterfall - Forced Host", val ) );
-+            String motd = ChatColor.translateAlternateColorCodes( '&', get( "motd", "&1Just another Avalanche - Forced Host", val ) ); // Avalanche
++            String motd = ChatColor.translateAlternateColorCodes( '&', get( "motd", "&1Just another Mudslide - Forced Host", val ) ); // Mudslide
              boolean restricted = get( "restricted", false, val );
              SocketAddress address = Util.getAddr( addr );
              ServerInfo info = ProxyServer.getInstance().constructServerInfo( name, address, motd, restricted );
 diff --git a/proxy/src/main/java/net/md_5/bungee/module/JenkinsModuleSource.java b/proxy/src/main/java/net/md_5/bungee/module/JenkinsModuleSource.java
-index 9b20d0df..a7f552a8 100644
+index 9b20d0df..08601449 100644
 --- a/proxy/src/main/java/net/md_5/bungee/module/JenkinsModuleSource.java
 +++ b/proxy/src/main/java/net/md_5/bungee/module/JenkinsModuleSource.java
 @@ -18,7 +18,7 @@ public class JenkinsModuleSource implements ModuleSource
@@ -135,12 +135,12 @@ index 9b20d0df..a7f552a8 100644
          try
          {
 -            URL website = new URL( "https://papermc.io/ci/job/Waterfall/" + version.getBuild() + "/artifact/Waterfall-Proxy/module/" + module.getName().replace( '_', '-' ) + "/target/" + module.getName() + ".jar" );
-+            URL website = new URL( "https://ci.pl3x.net/job/Avalanche/" + version.getBuild() + "/artifact/final/" + module.getName() + ".jar" ); // Avalanche
++            URL website = new URL( "https://ci.birdflop.com/job/Mudslide/" + version.getBuild() + "/artifact/final/" + module.getName() + ".jar" ); // Mudslide
              URLConnection con = website.openConnection();
              // 15 second timeout at various stages
              con.setConnectTimeout( 15000 );
 diff --git a/proxy/src/main/java/net/md_5/bungee/module/ModuleVersion.java b/proxy/src/main/java/net/md_5/bungee/module/ModuleVersion.java
-index d52b8106..baac55a8 100644
+index d52b8106..cf1c3ce0 100644
 --- a/proxy/src/main/java/net/md_5/bungee/module/ModuleVersion.java
 +++ b/proxy/src/main/java/net/md_5/bungee/module/ModuleVersion.java
 @@ -14,8 +14,8 @@ public class ModuleVersion
@@ -149,8 +149,8 @@ index d52b8106..baac55a8 100644
      {
 -        int lastColon = version.lastIndexOf( ':' );
 -        int secondLastColon = version.lastIndexOf( ':', lastColon - 1 );
-+        int lastColon = version.lastIndexOf( '-' ); // Avalanche
-+        int secondLastColon = version.lastIndexOf( '-', lastColon - 1 ); // Avalanche
++        int lastColon = version.lastIndexOf( '-' ); // Mudslide
++        int secondLastColon = version.lastIndexOf( '-', lastColon - 1 ); // Mudslide
  
          if ( lastColon == -1 || secondLastColon == -1 )
          {
@@ -159,10 +159,10 @@ index d52b8106..baac55a8 100644
          String gitCommit = version.substring( secondLastColon + 1, lastColon ).replaceAll( "\"", "" );
  
 -        if ( "unknown".equals( buildNumber ) || "unknown".equals( gitCommit ) )
-+        if ( "unknown".equals( buildNumber ) || "unknown".equals( gitCommit ) || buildNumber.contains("\"") ) // Avalanche
++        if ( "unknown".equals( buildNumber ) || "unknown".equals( gitCommit ) || buildNumber.contains("\"") ) // Mudslide
          {
              return null;
          }
 -- 
-2.25.1
+2.13.3.windows.1
 
