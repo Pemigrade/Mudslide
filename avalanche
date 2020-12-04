@@ -13,7 +13,6 @@ case "$1" in
 "b" | "build")
     (
         scripts/build.sh --jar
-        cp ./Avalanche-Proxy/bootstrap/target/Avalanche.jar ./
     )
     ;;
 "e" | "edit")
