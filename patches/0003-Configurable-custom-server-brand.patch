@@ -1,4 +1,4 @@
-From 9dbf80d8ec9648a5c6d27d9f51199991c5f7dd04 Mon Sep 17 00:00:00 2001
+From b49a28465bafe6205570cdd5b5bd407f2e2f7c86 Mon Sep 17 00:00:00 2001
 From: William Blake Galbreath <Blake.Galbreath@GMail.com>
 Date: Tue, 9 Jun 2020 22:46:29 -0500
 Subject: [PATCH] Configurable custom server brand
@@ -47,10 +47,10 @@ index 9e180c30..d7ea0c65 100644
              brand.release();
              // changes in the packet are ignored so we need to send it manually
 diff --git a/proxy/src/main/java/net/md_5/bungee/connection/InitialHandler.java b/proxy/src/main/java/net/md_5/bungee/connection/InitialHandler.java
-index 7e6027aa..4c1ee0a6 100644
+index b7ecd828..68e76855 100644
 --- a/proxy/src/main/java/net/md_5/bungee/connection/InitialHandler.java
 +++ b/proxy/src/main/java/net/md_5/bungee/connection/InitialHandler.java
-@@ -175,7 +175,14 @@ public class InitialHandler extends PacketHandler implements PendingConnection
+@@ -177,7 +177,14 @@ public class InitialHandler extends PacketHandler implements PendingConnection
          this.legacy = true;
          final boolean v1_5 = ping.isV1_5();
  
@@ -66,7 +66,7 @@ index 7e6027aa..4c1ee0a6 100644
                  new ServerPing.Players( listener.getMaxPlayers(), bungee.getOnlineCount(), null ),
                  new TextComponent( TextComponent.fromLegacyText( listener.getMotd() ) ), (Favicon) null );
  
-@@ -223,8 +230,15 @@ public class InitialHandler extends PacketHandler implements PendingConnection
+@@ -225,8 +232,15 @@ public class InitialHandler extends PacketHandler implements PendingConnection
  
      private ServerPing getPingInfo(String motd, int protocol)
      {
@@ -84,7 +84,7 @@ index 7e6027aa..4c1ee0a6 100644
                  motd, BungeeCord.getInstance().config.getFaviconObject()
          );
 diff --git a/proxy/src/main/resources/messages.properties b/proxy/src/main/resources/messages.properties
-index 6e3ef0a4..63a6b484 100644
+index 2a79e62b..f661d93e 100644
 --- a/proxy/src/main/resources/messages.properties
 +++ b/proxy/src/main/resources/messages.properties
 @@ -38,3 +38,4 @@ you_got_summoned=\u00a76Summoned to {0} by {1}
@@ -93,5 +93,5 @@ index 6e3ef0a4..63a6b484 100644
  command_ip=\u00a79IP of {0} is {1}
 +custom_brand=
 -- 
-2.25.1
+2.13.3.windows.1
 
