@@ -1,14 +1,14 @@
-Avalanche
+Mudslide
 =========
 
-Avalanche is a fork of Waterfall used by Pl3xCraft.
+Mudslide is the continuation of Avalanche, a deprecated fork originally developed by BillyGalbreath. It contains support for a custom server name.
 
-## Contact
-[Discord](https://discord.gg/mtAAnkk)
+## Support
+[Discord](https://discord.gg/zsz3PzT)
 
 ## Server owners
 
-Downloads can be obtained from Pl3x's [Jenkins server](https://ci.pl3x.net/job/Avalanche/).
+Downloads can be obtained from Birdflop's [Jenkins server](https://ci.birdflop.net/job/mudslide/).
 
 ## Plugin developers
 
