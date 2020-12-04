@@ -109,7 +109,7 @@ index 0a890393..e48f84fb 100644
  
      <build>
 -        <finalName>Waterfall</finalName>
-+        <finalName>mudslide</finalName>
++        <finalName>mudslide-${BUILD_NUMBER}</finalName>
          <plugins>
              <plugin>
                  <groupId>org.apache.maven.plugins</groupId>
